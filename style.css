@@ -120,10 +120,8 @@ button[disabled] {
 
 .box{
   font-weight: 350;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  margin: auto;
+  width: 9%;
   
   
 }
@@ -137,6 +135,25 @@ button[disabled] {
   color: white;
 }
 
+
+/* large laptop */
+@media (max-width: 1440px){
+  .box{
+    width: 13%;
+  }
+}
+
+@media (max-width: 1024px){
+  .box{
+    width: 18%;
+  }
+}
+
+@media (max-width:768px){
+  .box{
+    width: 25%;
+  }
+}
 
 @media (max-width: 690px) {
   .btn {
@@ -153,5 +170,32 @@ button[disabled] {
 @media (max-width: 500px) {
   .btn {
     font-size: 0.8rem;
+  }
+
+  .box p{
+    font-size: .8rem;
+  }
+
+  @media (max-width: 425px){
+    .box{
+      display: block;
+      width: 38%;
+      margin: auto;
+    }
+    .box p{
+      font-size: .8rem;
+    }
+  }
+}
+
+@media (max-width: 375px){
+  .box{
+    width: 45%;
+  }
+}
+
+@media (max-width: 320px){
+  .box{
+    width: 52%;
   }
 }

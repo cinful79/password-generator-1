@@ -15,7 +15,7 @@ generateBtn.addEventListener("click", writePassword);
 
 //this function returns the password
 function generatePassword(){
-  console.log("button press works.")
+  
   let boxesChecked = isChecked(); //Find the checked boxes
   let passwordLength = getPasswordLength(); //Get length of desired password
   let types = getCriteria();//Generates seeding array
@@ -24,7 +24,7 @@ function generatePassword(){
   
   //the wait is over, if everything is valid, time to build a password.
   if(proceed){ 
-    console.log("Now in the password generation part.");
+    
     //use the array and start generating passwords
     //array shows ON or OFF states, loops over states adding random chars till above max
     let rawPass = []; 
@@ -57,20 +57,15 @@ function generatePassword(){
       count++;
     }
     }
-    
-    //test of password generation
-    console.log(rawPass);
-    //randomize
+    //randomize the array
     rawPass = shuffle(rawPass);
-
-    console.log(rawPass);
     //Depending on the number of digits we may need to trim.
     rawPass = passTrimmer(rawPass, passwordLength);
-    console.log(rawPass);
-
     let passwordComplete = finalizePassword(rawPass);
-
     return passwordComplete;
+  }
+  else{
+    return "";
   }
 }
 
@@ -135,7 +130,7 @@ function isValidInput(boxesChecked, num){
 
 //function gets the password length. 
 function getPasswordLength(){
-  console.log("Password Length F(x)");
+
   let input = prompt("Please enter desired password length. Min 8 Max 128");
   input = Math.floor(input); //just in case they did a decimal.
   return input; //input validated later.
@@ -143,7 +138,7 @@ function getPasswordLength(){
 
 //Makes sure at least one checkbox has been selected. Status working!
 function isChecked(){
-  console.log("isChecked F(x)");
+  
   //if any not checked
   if( !document.getElementById("lower").checked && !document.getElementById("upper").checked && !document.getElementById("number").checked && !document.getElementById("special").checked){
     return false;
@@ -154,7 +149,7 @@ function isChecked(){
 
 //Gets status of checkboxes to generate password. Validates min one has been checked. Status working.
 function getCriteria(){
-  console.log("getCriteria F(x)");
+  
   //Since we want to allow multiple selections lets use an array. to pass yes or no back.
   let choices = [];
   //check to see which boxes are checked, 1 if yes, 0 if no
